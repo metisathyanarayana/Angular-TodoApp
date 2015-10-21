@@ -1,0 +1,27 @@
+.main-container {
+    margin: 0 auto;
+    width: 300px;
+    border: 1px solid #999;
+    padding: 10px;
+    height: 300px;
+    font-family: "arial";
+    box-sizing: border-box;
+    -webkit-box-shadow: 3px 3px 20px 0px rgba(87, 82, 87, 1);
+    -moz-box-shadow: 3px 3px 20px 0px rgba(87, 82, 87, 1);
+    box-shadow: 3px 3px 20px 0px rgba(87, 82, 87, 1);
+}
+
+.main-container h1 {
+    text-align: center;
+    margin-top: 0;
+}
+li{
+	list-style: none;
+}
+.done{
+	text-decoration: line-through;
+	color:#ccc;
+}
+[ng\:cloak], [ng-cloak], .ng-cloak{
+  display: none !important;
+}

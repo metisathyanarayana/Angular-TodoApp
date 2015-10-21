@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+
+<head>
+    <title>My Todo App</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body ng-cloak>
+    <section class="main-container" ng-controller="todoController">
+        <h1>My Todo App </h1>
+        <div>Total Tasks: {{todos.length}}</div>
+        <div> Remaining Tasks:{{remaining()}} </div>
+        <div >Tasks Done:{{todos.length-remaining()}}</div>
+        <form name="form" class="form" ng-submit="addTodo()">
+            <label>Name</label>
+            <input type="text" placeholder="Name" class="todoinput" ng-model="todoItem" required>
+            <button ng-disabled="form.$invalid">Add</button>
+            <ul>
+                <li ng-repeat="todo in todos">
+                    <input type="checkbox" ng-model="todo.done">
+                    <span ng-class="{'done':todo.done}">
+                		{{todo.title}}
+                	</span>
+                </li>
+            </ul>
+        </form>
+        <div class="selection">
+            <label>selectAll:</label>
+            <input type="checkbox" ng-model="selectedAll" ng-click="selectAll()">
+            <label>unselectAll:</label>
+            <input type="checkbox" ng-click="unselectAll()">
+        </div>
+        <button ng-click="remove()">Clear</button>
+        <!-- <button  ng-click="selectAll()">selectAll</button>
+        <button  ng-click="unselectAll()">unselectAll</button> -->
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js">
+    </script>
+    <script src="js/todo.js"></script>
+</body>
+
+</html>
