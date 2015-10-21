@@ -28,7 +28,8 @@ todo.controller('todoController', ['$scope', function($scope) {
 
 
         angular.forEach($scope.todos, function(item) {
-            item.done = $scope.selectedAll;
+            item.done = true;
+            //item.done = $scope.selectedAll;
         });
     };
     $scope.unselectAll = function() {
